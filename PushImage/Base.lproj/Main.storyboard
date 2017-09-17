@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A362a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
@@ -717,7 +717,7 @@
                     <connections>
                         <outlet property="dragView" destination="Dub-pS-EKa" id="qF5-uL-IAk"/>
                         <outlet property="imageView" destination="UM6-G3-f2E" id="BBt-RO-yMQ"/>
-                        <outlet property="progressIndicator" destination="ofH-0X-KKD" id="dQs-ia-6DJ"/>
+                        <outlet property="loadingSpinner" destination="ofH-0X-KKD" id="izg-C1-Yd9"/>
                         <outlet property="staticLabel" destination="YkC-M3-1Oo" id="zKd-eL-1uh"/>
                     </connections>
                 </viewController>

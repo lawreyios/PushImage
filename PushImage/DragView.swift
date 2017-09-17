@@ -33,7 +33,7 @@ class DragView: NSView {
     
     //3
     override func draggingUpdated(_ sender: NSDraggingInfo) -> NSDragOperation {
-        return fileTypeIsOk ? .copy : []
+        return fileTypeIsOk ? .link : []
     }
     
     //4

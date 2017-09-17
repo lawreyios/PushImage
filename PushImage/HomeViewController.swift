@@ -10,31 +10,22 @@ import Cocoa
 import Alamofire
 
 class HomeViewController: NSViewController {
-
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var staticLabel: NSTextField!
-    @IBOutlet weak var progressIndicator: NSProgressIndicator!
-    
-    //1
+    @IBOutlet weak var loadingSpinner: NSProgressIndicator!
     @IBOutlet weak var dragView: DragView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-    }
-    
-    fileprivate func setupView() {
-        progressIndicator.isHidden = true
-        //2
-        dragView.delegate = self        
+        dragView.delegate = self
+        loadingSpinner.isHidden = true
     }
 }
 
-//3
 extension HomeViewController: DragViewDelegate {
     func dragView(didDragFileWith URL: NSURL) {
-        progressIndicator.isHidden = false
-        progressIndicator.startAnimation(self.view)
+        loadingSpinner.isHidden = false
+        loadingSpinner.startAnimation(self.view)
         staticLabel.isHidden = true
         
         Alamofire.upload(multipartFormData: { (data: MultipartFormData) in
@@ -48,8 +39,8 @@ extension HomeViewController: DragViewDelegate {
                         let data = dataDict["data"] as? NSDictionary,
                         let imgUrl = data["img_url"] as? String else { return }
                     
-                    self?.progressIndicator.isHidden = true
-                    self?.progressIndicator.stopAnimation(self?.view)
+                    self?.loadingSpinner.isHidden = true
+                    self?.loadingSpinner.stopAnimation(self?.view)
                     self?.staticLabel.isHidden = false
                     self?.showSuccessAlert(url: imgUrl)
                 }
